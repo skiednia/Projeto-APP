@@ -33,7 +33,7 @@ var contatos = JSON.parse(localStorage.getItem('list_contatos')) || [];
     var contatoText = inputElement.value;
 
 
-    todos.push(contatoText);
+    contatos.push(contatoText);
     inputElement.value = '';
     renderContatos();
     saveToStorage();
