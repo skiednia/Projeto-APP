@@ -2,13 +2,13 @@ var listElement = document.querySelector("#app ul");
 var inputElement = document.querySelector("#app input");
 var buttonElement = document.querySelector("#app button");
 
-var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
+var contatos = JSON.parse(localStorage.getItem('list_contatos')) || [];
 
-  function renderTodos() {
+  function renderContatos() {
     listElement.innerHTML = '';
-      for(todo of todos) {
-        var todoElement = document.createElement('li');
-        var todoText = document.createTextNode(todo);
+      for(contato of contatos) {
+        var contatoElement = document.createElement('li');
+        var contatoText = document.createTextNode(contatoElement);
 
         var linkElement = document.createElement('a');
         var linkText = document.createTextNode('Excluir');
@@ -17,39 +17,39 @@ var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
         linkElement.setAttribute('href', '#');
 
-        var pos = todos.indexOf(todo);
-        linkElement.setAttribute('onclick', 'deleteTodo(' + pos +')');
+        var pos = contatos.indexOf(contato);
+        linkElement.setAttribute('onclick', 'deleteContato(' + pos +')');
 
-        todoElement.appendChild(todoText);
-        todoElement.appendChild(linkElement);
+        contatoElement.appendChild(contatoText);
+        contatoElement.appendChild(linkElement);
 
-        listElement.appendChild(todoElement);
+        listElement.appendChild(contatoElement);
       }
   }
 
-  renderTodos();
+  renderContatos();
 
-  function addTodo(){
-    var todoText = inputElement.value;
+  function addContato(){
+    var contatoText = inputElement.value;
 
 
-    todos.push(todoText);
+    todos.push(contatoText);
     inputElement.value = '';
-    renderTodos();
+    renderContatos();
     saveToStorage();
 
   };
 
-  buttonElement.onclick = addTodo;
+  buttonElement.onclick = addContato;
 
-  function deleteTodo(pos) {
-    todos.splice(pos, 1);
-    renderTodos();
+  function deleteContato(pos) {
+    contatos.splice(pos, 1);
+    renderContatos();
     saveToStorage();
   }
 
   function saveToStorage() {
-    localStorage.setItem('list_Todos', JSON.stringify(todos));
+    localStorage.setItem('list_Contatos', JSON.stringify(contatos));
     
   }
   
