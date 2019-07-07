@@ -5,8 +5,8 @@ var buttonElement = document.querySelector("#app button");
 var contatos = JSON.parse(localStorage.getItem('list_contatos')) || [];
 
   function renderContatos() {
-    listElement.innerHTML = '';
-      for(contato of contatos) {
+     listElement.innerHTML ="";
+    for(contato of contatos) {
         var contatoElement = document.createElement('li');
         var contatoText = document.createTextNode(contatoElement);
 
