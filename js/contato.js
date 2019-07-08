@@ -6,9 +6,10 @@ var contatos = JSON.parse(localStorage.getItem('list_contatos')) || [];
 
   function renderContatos() {
      listElement.innerHTML ="";
+
     for(contato of contatos) {
         var contatoElement = document.createElement('li');
-        var contatoText = document.createTextNode(contatoElement);
+        var contatoText = document.createTextNode(contato);
 
         var linkElement = document.createElement('a');
         var linkText = document.createTextNode('Excluir');
