@@ -1,9 +1,12 @@
 var listElement = document.querySelector("#app ul");
 var inputElement = document.querySelector("#app input");
 var buttonElement = document.querySelector("#app button");
-var inputa = document.querySelector("#a input");
-var inputb = document.querySelector("#b input");
-var inputc = document.querySelector("#c input");
+var buttonA = document.querySelector("#botaoa button");
+var buttonB = document.querySelector("#botaob button");
+var buttonC = document.querySelector("#botaoc button");
+var inputA = document.querySelector("#b input");
+var inputB = document.querySelector("#c input");
+var inputC = document.querySelector("#a input");
 
 var contatos = JSON.parse(localStorage.getItem('list_contatos')) || [];
 
@@ -43,8 +46,20 @@ var contatos = JSON.parse(localStorage.getItem('list_contatos')) || [];
     saveToStorage();
 
   };
+  function addNumero(){
+    var contatoNumero = inputA.value;
+
+
+    contatos.push(contatoNumero);
+    inputA.value = "";
+    renderContatos();
+    saveToStorage();
+
+  };
 
   buttonElement.onclick = addContato;
+  buttonA.onclick = addNumero;
+
 
   function deleteContato(pos) {
     contatos.splice(pos, 1);
