@@ -1,6 +1,9 @@
 var listElement = document.querySelector("#app ul");
 var inputElement = document.querySelector("#app input");
 var buttonElement = document.querySelector("#app button");
+var inputa = document.querySelector("#a input");
+var inputb = document.querySelector("#b input");
+var inputc = document.querySelector("#c input");
 
 var contatos = JSON.parse(localStorage.getItem('list_contatos')) || [];
 
